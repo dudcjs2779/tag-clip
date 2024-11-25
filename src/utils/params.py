@@ -214,13 +214,13 @@ def setup_parser():
         "--image_key",
         type=str,
         default="image_path",
-        help="For csv-like datasets, the name of the key for the image paths."
+        help="For pd.dataframe, the name of column contains image path.(str)"
     )
     parser.add_argument(
         "--tag_key",
         type=str,
         default="tags",
-        help="For csv-like datasets, the name of the key for the captions."
+        help="For pd.dataframe, the name of column contains tags.(numpy.ndarray)"
     )
     parser.add_argument(
         "--workers",
