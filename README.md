@@ -27,15 +27,12 @@ python src/inference_example.py
 ```
 
 ### Model train 
-You can preprocess the tag with `tag_process.py` before training. Just make sure the image and tag are in the same directory with the same name. In this process `..._processed.parquet` is created and you can use this for training. 
-```
-python src/tag_process.py --image_dir="path/to/image/and/text"
-# or
-python src/tag_process.py --config="config/tag_process.toml"to match your data.
-```
-
-Run `src/eva_clip.py` for training. You can easily set arguments with a config file.  
+Run `src/eva_clip.py` for training. You can easily set arguments with a config file `config/eva02_base_patch16_clip_default.toml`.  
 In the config file, change the `train`, `image_key`, `tag_key` arguments to match your dataset.  
+- train: parquet file path.
+- image_key: the name of column contains image path.(str)
+- tag_key: the name of column contains tags.(numpy.ndarray)
+- 
 For a detailed description of the arguments, check out `src/utils/params.py.`  
 
 Optionally, install [faiss](https://github.com/facebookresearch/faiss/blob/main/INSTALL.md) to calculate the recall of the validation. This corresponds to the `recall` argument of config file.
