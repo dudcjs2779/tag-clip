@@ -1,5 +1,5 @@
 # tag-clip
-This project is about a CLIP model trained with animation-style images and tags.
+This project is about a CLIP model trained with images and tags.
 And I referenced a lot [open_clip](https://github.com/mlfoundations/open_clip/).
 
 ## CLIP-Approach
