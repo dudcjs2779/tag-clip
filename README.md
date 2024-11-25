@@ -32,7 +32,7 @@ In the config file, change the `train`, `image_key`, `tag_key` arguments to matc
 - train: parquet file path.
 - image_key: the name of column contains image path.(str)
 - tag_key: the name of column contains tags.(numpy.ndarray)
-- 
+  
 For a detailed description of the arguments, check out `src/utils/params.py.`  
 
 Optionally, install [faiss](https://github.com/facebookresearch/faiss/blob/main/INSTALL.md) to calculate the recall of the validation. This corresponds to the `recall` argument of config file.
