@@ -1,0 +1,64 @@
+[model]
+model_name = 'EVA02-L-14-336'
+pretrained = 'merged2b_s6b_b61k'
+precision = 'amp' # amp, amp_bf16, amp_bfloat16
+# resume = 'logs/24-11-08_12-19-48_EVA02-L-14-336/checkpoint/epoch_8.pt'
+save_frequency = 1
+# max_save_count = 10
+
+[tokenizer]
+weighted_shuffle = false
+gaussian_params = ["mu_p=0.7", "sigma_p=0.2", "scale=3", "min_offset=2.0"]
+
+[train]
+seed = 42
+epochs = 20
+batch_size = 4
+accum_freq = 4
+loss_fn = "KL"
+
+[validation]
+valid = true
+valid_batch_size = 16
+valid_size = 100
+recall = true
+split_by_class = true
+
+[logger]
+report_to = 'wandb'    # tensorboard, wandb
+wandb_project_name = 'tag-clip' #
+# run_id = 'cjv930cu'
+
+[optimizer]
+image_encoder_lr = 4e-4
+text_encoder_lr = 4e-5
+warmup = 20
+wd = 0.05
+beta1 = 0.9
+beta2 = 0.98
+esp = 1e-6
+img_lwld_decay = 0.85
+text_lwld_decay = 0.75
+
+
+[data]
+train = './my_dataset/table_data/24-10-25_16-58-19_processed.parquet'
+image_key = 'image_path'
+tag_key = 'tags'
+workers = 4
+cache_dir = './my_dataset/img_caches'
+cache_image = true
+save_cache_image = true
+# cache_load = true
+cache_load_disk = true
+
+[dataset]
+dynamic_img_size = true
+image_size = [448, 448] # [512, 512], 448
+patch_size = 14
+step_size = 42
+min_size=210
+max_size=840
+
+[debug]
+debug = false

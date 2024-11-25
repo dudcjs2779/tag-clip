@@ -1,0 +1,11 @@
+[path]
+image_dir = "my_dataset/images"
+save_dir = "index"
+
+[setting]
+batch_size = 256
+pair = true
+
+[model]
+model = "ViT-B-32"
+pretrained = "laion2b_s34b_b79k"

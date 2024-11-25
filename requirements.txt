@@ -1,0 +1,12 @@
+torch==2.1.2
+open_clip_torch==2.29.0
+opencv-python==4.10.0.84
+albumentations==1.4.21
+scikit-learn==1.5.2
+pyarrow==18.0.0
+toml==0.10.2
+bitsandbytes==0.44.1
+numpy==1.26.4
+pandas==2.2.3
+tensorboard==2.18.0
+wandb==0.18.7

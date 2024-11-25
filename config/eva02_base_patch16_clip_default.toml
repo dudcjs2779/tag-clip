@@ -1,0 +1,64 @@
+# Please check "src/utils/params.py" for argument descriptions
+[model]
+model_name = 'EVA02-B-16'
+pretrained = 'merged2b_s8b_b131k'
+precision = 'amp'
+# resume = ''
+save_frequency = 1
+# max_save_count = 10
+
+[tokenizer]
+weighted_shuffle = false
+gaussian_params = ["mu_p=0.7", "sigma_p=0.2", "scale=3", "min_offset=2.0"]
+
+[train]
+seed = 42
+epochs = 20
+batch_size = 8
+accum_freq = 4
+loss_fn = "KL"
+
+[validation]
+valid = true
+valid_batch_size = 12
+valid_size = 500
+recall = true
+split_by_class = false
+
+[logger]
+report_to = 'tensorboard'    # tensorboard, wandb
+wandb_project_name = 'tag-clip'
+# run_id = ''
+
+[optimizer]
+image_encoder_lr = 2e-4
+text_encoder_lr = 2e-5
+warmup = 500
+wd = 0.05
+beta1 = 0.9
+beta2 = 0.98
+esp = 1e-6
+img_lwld_decay = 0.75   # 0.75
+text_lwld_decay = 0.75  # 0.75
+
+[data]
+train = 'my_dataset/table_data/24-11-14_20-05-27_processed.parquet'
+image_key = 'image_path'
+tag_key = 'tags'
+workers = 0
+cache_dir = './my_dataset/img_caches'
+cache_image = false
+save_cache_image = false
+cache_load = false
+cache_load_disk = false
+
+[dataset]
+dynamic_img_size = true
+image_size = [448, 448]
+patch_size = 16
+step_size = 64
+min_size=210
+max_size=840
+
+[debug]
+debug = false

@@ -1,0 +1,17 @@
+[path]
+image_dir = "my_dataset/images"
+index_path = "index/24-10-22_13-38-18.index"
+dup_dir = "my_dataset/dup_dir"    
+save_dir = "index"
+
+[setting]
+batch_size = 256
+threshold = 0.995
+topk = 20
+do_test = true
+remove = false
+pair = true
+
+[model]
+model = "ViT-B-32"
+pretrained = "laion2b_s34b_b79k"

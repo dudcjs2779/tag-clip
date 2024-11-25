@@ -1,0 +1,13 @@
+[path]
+image_dir = './my_dataset/images'
+save_dir = './my_dataset/table_data'
+tag_csv = "my_dataset/table_data/tags.csv"
+
+[setting]
+pair = true
+remove = false
+max_token_len = 500
+general_limit = 200
+
+[model]
+tokenizer_name = 'EVA02-L-14-336'
