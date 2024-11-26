@@ -23,7 +23,7 @@ Valid: 2000
 
 ## Layer-wise lr decay
 **Layer-wise lr decay** is a method that applies a lower lr to deeper layer.  
-Deeper layers focus on more complex and abstract features, so they can be trained more slowly.  
+Deeper layers focus on more complex and abstract features, so It will be better train more slowly.  
 And also It useful to fine-tune model while keep pre-trained knowledge.  
 
 <img src="image/lr_decay_R1.png" width="450"> <img src="image/lr_decay_R5.png" width="450">
