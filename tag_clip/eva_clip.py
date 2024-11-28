@@ -32,13 +32,13 @@ from torch.cuda.amp import GradScaler
 
 from bitsandbytes.optim import AdamW8bit
 
-from utils.params import setup_parser
-from utils.basic_utils import read_config
-from utils.optim_utils import make_lwld_clip_params_group
-from utils.scheduler import GroupCosineLR
-from utils.loss import MultiLabelClipLoss, TagClipLoss
-from utils.models import create_custom_model
-from utils.dataset import make_dataset
+from tag_clip.utils.params import setup_parser
+from tag_clip.utils.basic_utils import read_config
+from tag_clip.utils.optim_utils import make_lwld_clip_params_group
+from tag_clip.utils.scheduler import GroupCosineLR
+from tag_clip.utils.loss import MultiLabelClipLoss, TagClipLoss
+from tag_clip.utils.models import create_custom_model
+from tag_clip.utils.dataset import make_dataset
 tqdm.pandas()
 
 def unwrap_model(model):

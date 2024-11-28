@@ -13,9 +13,9 @@ import cv2
 import faiss
 
 from torch.utils.data import DataLoader
-from utils.data import get_files
-from utils.dataset import DupDataset
-from utils.basic_utils import read_config
+from tag_clip.utils.data import get_files
+from tag_clip.utils.dataset import DupDataset
+from tag_clip.utils.basic_utils import read_config
 
 def setup_parser():
     parser = argparse.ArgumentParser()

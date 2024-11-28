@@ -18,7 +18,7 @@ from albumentations.pytorch import ToTensorV2
 from albumentations.augmentations.geometric.functional import resize as A_resize
 from albumentations.augmentations.crops.functional import get_center_crop_coords, crop as A_crop
 
-from utils.data import make_tag_weights, load_cache_images, cache_process, make_frames, get_resize_and_frame_size
+from tag_clip.utils.data import make_tag_weights, load_cache_images, cache_process, make_frames, get_resize_and_frame_size
 
 def make_dataset(df, args) -> tuple[DataLoader, DataLoader]:
     # mean = (0.48145466, 0.4578275, 0.40821073)

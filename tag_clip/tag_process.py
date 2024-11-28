@@ -5,10 +5,10 @@ import shutil
 from datetime import datetime
 import pandas as pd
 from tqdm import tqdm
-from utils.data import get_files
+from tag_clip.utils.data import get_files
 import html
 from open_clip.factory import get_tokenizer
-from utils.basic_utils import read_config
+from tag_clip.utils.basic_utils import read_config
 tqdm.pandas()
 
 def setup_parser():
