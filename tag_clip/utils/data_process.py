@@ -3,7 +3,7 @@ import math
 from PIL import Image
 import shutil
 from tqdm import tqdm
-from utils.data import get_files
+from tag_clip.utils.data import get_files
 
 def resize_images(image_dir, max_res=4096, max_res_offset=512):
     image_paths, _ = get_files(image_dir)
