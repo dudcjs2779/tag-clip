@@ -20,6 +20,7 @@ setup(
         "pandas",
         "tensorboard",
         "wandb",
+        "pyarrow"
     ],
     classifiers=[
         "Programming Language :: Python :: 3",
