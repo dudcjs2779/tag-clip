@@ -14,16 +14,21 @@ I used eva02_base_patch16_clip_224.merged2b_s8b_b131k model and pretrain weight.
 I recommend create conda env with python 3.10.
 ```
 conda create -n tag_clip python=3.10
+
+# activate env
+conda activate tag_clip
+or
+source activate tag_clip
 ```
 
-Install [torch](https://pytorch.org/get-started/previous-versions/)(v2.1.2), [open_clip](https://github.com/mlfoundations/open_clip/) and requirements.
+Install the required packages with the following commands.
 ```
-pip install -r requirements.txt
+pip install -e .
 ```
 
 ### Model inference
 ```
-python src/inference_example.py
+python tag_clip/inference_example.py
 ```
 
 ### Model train 
@@ -37,7 +42,7 @@ For a detailed description of the arguments, check out `src/utils/params.py.`
 
 Optionally, install [faiss](https://github.com/facebookresearch/faiss/blob/main/INSTALL.md) to calculate the recall of the validation. This corresponds to the `recall` argument of config file.
 ```
-python src/eva_clip.py --config_path="config/eva02_base_patch16_clip_default.toml"
+python tag_clip/eva_clip.py --config_path="config/eva02_base_patch16_clip_default.toml"
 ```
 
 ## Evaluate
