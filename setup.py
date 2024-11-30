@@ -2,7 +2,7 @@ from setuptools import setup, find_packages
 
 setup(
     name="tag_clip",
-    version="0.1.1",
+    version="0.1.2",
     description="Code to train the clip with tag",
     author="dudcjs2779",
     author_email="dudcjs2779@gmail.com",
