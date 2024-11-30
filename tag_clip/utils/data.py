@@ -142,7 +142,9 @@ def make_frames(pixel_w, pixel_h, patch_size, step_size, min_size, max_size) -> 
     max_pixel = pixel_w * pixel_h
 
     frames = set()
-    width = patch_size * math.floor(math.sqrt(max_pixel) / patch_size)
+    min_size = round(min_size / patch_size) * patch_size
+    max_size = round(max_size / patch_size) * patch_size
+    width = min_size
     frames.add((width, width))
 
     width = round(min_size / patch_size) * patch_size
